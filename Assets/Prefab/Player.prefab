@@ -91,7 +91,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1666119971
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1857188551261513057, guid: 2e632c4465719964a9a75cff15482188,
     type: 3}
@@ -124,7 +124,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &-6641397926952194805
 CapsuleCollider2D:
@@ -154,4 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4298c583ea1eb904abe70bc5cf61361b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 5
+  runSpeed: 4.5
+  jumpSpeed: 15
+  climbSpeed: 5
