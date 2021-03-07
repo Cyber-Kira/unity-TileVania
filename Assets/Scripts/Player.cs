@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    // Config
     [SerializeField] float runSpeed = 5f;
+
+    // State
+    bool isAlive = true;
+
+    // Cached component references
     Rigidbody2D myRigidBody;
+    Animator myAnimator;
 
     private void Start() {
         myRigidBody = GetComponent<Rigidbody2D>();
+        myAnimator = GetComponent<Animator>();
     }
     private void Update() {
         Run();
@@ -17,8 +25,11 @@ public class Player : MonoBehaviour
 
     private void Run() {
         float controlThrow = Input.GetAxis("Horizontal") * runSpeed;
+        bool playerHasHorizontalSpeed = Mathf.Abs(myRigidBody.velocity.x) > Mathf.Epsilon;
         Vector2 playerVelocity = new Vector2(controlThrow, myRigidBody.velocity.y);
+
         myRigidBody.velocity = playerVelocity;
+        myAnimator.SetBool("Running", playerHasHorizontalSpeed);
     }
 
     private void FlipSprite() {
